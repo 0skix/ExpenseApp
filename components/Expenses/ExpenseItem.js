@@ -1,17 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import styled from "styled-components";
 import { Form, Formik } from "formik";
-const ExpenseItem = (data) => {
-	const [title, setTitle] = useState(data.title);
+const ExpenseItem = (props) => {
 	return (
 		<Wrapper>
 			<Card className="expense-item">
 				<div className="expense-item__description">
-					<ExpenseDate date={data.date} />
-					<h2 className="expense-item-h2">{title}</h2>
-					<div className="expense-item__price">${data.amount}</div>
+					<ExpenseDate date={props.date} />
+					<h2 className="expense-item-h2">{props.title}</h2>
+					<div className="expense-item__price">${props.amount}</div>
 				</div>
 				<Formik
 					initialValues={""}

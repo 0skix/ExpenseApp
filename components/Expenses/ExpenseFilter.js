@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ExpenseFilter = (props) => {
@@ -10,7 +10,7 @@ const ExpenseFilter = (props) => {
 			<div className="expenses-filter">
 				<div className="expenses-filter__control">
 					<label>Filter by year</label>
-					<select name="year" onChange={handleChangeH}>
+					<select value={props.selected} name="year" onChange={handleChangeH}>
 						<option value="2022">2022</option>
 						<option value="2021">2021</option>
 						<option value="2020">2020</option>
