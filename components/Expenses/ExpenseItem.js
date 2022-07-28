@@ -6,25 +6,27 @@ import { Form, Formik } from "formik";
 const ExpenseItem = (props) => {
 	return (
 		<Wrapper>
-			<Card className="expense-item">
-				<div className="expense-item__description">
-					<ExpenseDate date={props.date} />
-					<h2 className="expense-item-h2">{props.title}</h2>
-					<div className="expense-item__price">${props.amount}</div>
-				</div>
-				<Formik
-					initialValues={""}
-					onSubmit={(values) => {
-						setTitle("kupa");
-					}}
-				>
-					{({ isSubmitting }) => (
-						<Form>
-							<button type="submit">Change Title</button>
-						</Form>
-					)}
-				</Formik>
-			</Card>
+			<li>
+				<Card className="expense-item">
+					<div className="expense-item__description">
+						<ExpenseDate date={props.date} />
+						<h2 className="expense-item-h2">{props.title}</h2>
+						<div className="expense-item__price">${props.amount}</div>
+					</div>
+					<Formik
+						initialValues={""}
+						onSubmit={(values) => {
+							setTitle("kupa");
+						}}
+					>
+						{({ isSubmitting }) => (
+							<Form>
+								<button type="submit">Change Title</button>
+							</Form>
+						)}
+					</Formik>
+				</Card>
+			</li>
 		</Wrapper>
 	);
 };
